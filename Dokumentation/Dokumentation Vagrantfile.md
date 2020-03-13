@@ -16,10 +16,14 @@ Es ist wichtig zu verstehen, dass innerhalb eines einzigen Konfigurationsabschni
  Hier wird der Port festgelegt über der die Virtuelle Maschine erreichbar ist. In diesem Fall hier wäre das der Port 8080.
  Die Option Auto Correct überprüft ob der gesetzte Port mit einem bereits verwendeten Port kollidiert. Wenn ja, wird der Host-Port automatisch geändert. Standardmässig ist diese Option auf "false" gesetzt.
 #
-  config.vm.synced_folder ".", "/var/www/html"  
+  config.vm.synced_folder ".", "/var/www/html"
+  beispieltext
+  #
 config.vm.provider "virtualbox" do |vb|
   vb.memory = "512"  
 end
+Text
+#
 config.vm.provision "shell", inline: <<-SHELL
   # Packages vom lokalen Server holen
   # sudo sed -i -e"1i deb {{config.server}}/apt-mirror/mirror/archive.ubuntu.com/ubuntu xenial main restricted" /etc/apt/sources.list 
@@ -27,8 +31,9 @@ config.vm.provision "shell", inline: <<-SHELL
   sudo apt-get -y install apache2 
 SHELL
 end
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDU5NTY0OTg2LDE3NzU1MDYyMjAsMTI1MD
-QzNjI5Miw2ODg2NDk5NDIsMTQwNDI3NTM5NiwtMTY0OTEyOTE2
-NCwtOTkxNjMzODQsLTc1MDcxNTkyMl19
+eyJoaXN0b3J5IjpbLTY0MzM4MDQ0MSw0NTk1NjQ5ODYsMTc3NT
+UwNjIyMCwxMjUwNDM2MjkyLDY4ODY0OTk0MiwxNDA0Mjc1Mzk2
+LC0xNjQ5MTI5MTY0LC05OTE2MzM4NCwtNzUwNzE1OTIyXX0=
 -->
