@@ -1,7 +1,8 @@
 Vagrantfile Dokumentation
 -----------------------------
 Vagrant.configure(2) do |config|
-#Die "2" steht für die Version der Objektkonfiguration, die für die Konfiguration dieses Blocks verwendet wird.
+
+Die "2" steht für die Version der Objektkonfiguration, die für die Konfiguration dieses Blocks verwendet wird.
 Das Objekt kann aber von Version zu Version sehr unterschiedlich sein.
 
 Derzeit gibt es nur zwei unterstützte Versionen: "1" und "2". Version 1 repräsentiert die Konfiguration von Vagrant 1.0.x. "2" repräsentiert die Konfiguration für 1.1+ bis 2.0.x.
@@ -21,6 +22,6 @@ config.vm.provision "shell", inline: <<-SHELL
 SHELL
 end
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTM3MzM4NTUsLTE2NDkxMjkxNjQsLT
-k5MTYzMzg0LC03NTA3MTU5MjJdfQ==
+eyJoaXN0b3J5IjpbMTQwNDI3NTM5NiwtMTY0OTEyOTE2NCwtOT
+kxNjMzODQsLTc1MDcxNTkyMl19
 -->
