@@ -1,14 +1,11 @@
 Vagrantfile Dokumentation
 -----------------------------
 Vagrant.configure(2) do |config|
-#
-Die "2" steht für die Version der Objektkonfiguration, die für die Konfiguration dieses Blocks verwendet wird.
+#Die "2" steht für die Version der Objektkonfiguration, die für die Konfiguration dieses Blocks verwendet wird.
 Das Objekt kann aber von Version zu Version sehr unterschiedlich sein.
 
 Derzeit gibt es nur zwei unterstützte Versionen: "1" und "2". Version 1 repräsentiert die Konfiguration von Vagrant 1.0.x. "2" repräsentiert die Konfiguration für 1.1+ bis 2.0.x.
-
-Als allgemeiner Benutzer von Vagrant ist es wichtig zu verstehen, dass innerhalb eines einzigen Konfigurationsabschnitts nur eine einzige Version verwendet werden kann. Sie können die neuen config.vm.provider-Konfigurationen nicht in einem Konfigurationsabschnitt der Version 1 verwenden. Ebenso wird config.vm.forward_port in einem Konfigurationsabschnitt der Version 2 nicht funktionieren (er wurde umbenannt).
-Es können mehrer Konfigurationsversionen in derselben Vagrantfile benutzt werden.
+Es ist wichtig zu verstehen, dass innerhalb eines einzigen Konfigurationsabschnitts nur eine einzige Version von Vagrant verwendet werden kann.
 #
   config.vm.box = "ubuntu/xenial64"
   config.vm.network "forwarded_port", guest:80, host:8080, auto_correct: true
@@ -24,6 +21,6 @@ config.vm.provision "shell", inline: <<-SHELL
 SHELL
 end
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzAwOTMyNjQsLTE2NDkxMjkxNjQsLT
+eyJoaXN0b3J5IjpbLTE3OTM3MzM4NTUsLTE2NDkxMjkxNjQsLT
 k5MTYzMzg0LC03NTA3MTU5MjJdfQ==
 -->
