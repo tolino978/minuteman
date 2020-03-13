@@ -8,7 +8,7 @@ Das Objekt kann aber von Version zu Version sehr unterschiedlich sein.
 Derzeit gibt es nur zwei unterstützte Versionen: "1" und "2". Version 1 repräsentiert die Konfiguration von Vagrant 1.0.x. "2" repräsentiert die Konfiguration für 1.1+ bis 2.0.x.
 Es ist wichtig zu verstehen, dass innerhalb eines einzigen Konfigurationsabschnitts nur eine einzige Version von Vagrant verwendet werden kann.
 #
-  config.vm.box = "ubuntu/xenial64"
+ config.vm.box = "ubuntu/xenial64"
   
   Hier wird spezifiziert welche VM Box verwendet werden soll.
 #
@@ -28,7 +28,7 @@ config.vm.provision "shell", inline: <<-SHELL
 SHELL
 end
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3NTUwNjIyMCwxMjUwNDM2MjkyLDY4OD
-Y0OTk0MiwxNDA0Mjc1Mzk2LC0xNjQ5MTI5MTY0LC05OTE2MzM4
-NCwtNzUwNzE1OTIyXX0=
+eyJoaXN0b3J5IjpbNDU5NTY0OTg2LDE3NzU1MDYyMjAsMTI1MD
+QzNjI5Miw2ODg2NDk5NDIsMTQwNDI3NTM5NiwtMTY0OTEyOTE2
+NCwtOTkxNjMzODQsLTc1MDcxNTkyMl19
 -->
