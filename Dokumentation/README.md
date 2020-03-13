@@ -1,4 +1,4 @@
-Beispiel: einfacher Webserver
+Einfacher Webserver
 -----------------------------
 
 Einfacher Webserver mit Ubuntu 16.x.
@@ -21,3 +21,6 @@ Falls dieser belegt ist, wird automatisch eine Alternative gewählt.
 ### Tests
 
 * `index.html` (Startdatei Apache Web Server) Datei in diesem Verzeichnis editieren und Änderungen via [http://localhost:8080](http://localhost:8080) überprüfen. 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNTAxMTM5MDMwXX0=
+-->
