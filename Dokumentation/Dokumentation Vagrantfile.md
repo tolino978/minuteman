@@ -25,15 +25,17 @@ end
 Text
 #
 config.vm.provision "shell", inline: <<-SHELL
-  # Packages vom lokalen Server holen
-  # sudo sed -i -e"1i deb {{config.server}}/apt-mirror/mirror/archive.ubuntu.com/ubuntu xenial main restricted" /etc/apt/sources.list 
+  Packages vom lokalen Server holen
+   sudo sed -i -e"1i deb {{config.server}}/apt-mirror/mirror/archive.ubuntu.com/ubuntu xenial main restricted" /etc/apt/sources.list 
   sudo apt-get update
   sudo apt-get -y install apache2 
 SHELL
 end
 
+#
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0MzM4MDQ0MSw0NTk1NjQ5ODYsMTc3NT
+eyJoaXN0b3J5IjpbLTEwODI3NDY2MCw0NTk1NjQ5ODYsMTc3NT
 UwNjIyMCwxMjUwNDM2MjkyLDY4ODY0OTk0MiwxNDA0Mjc1Mzk2
 LC0xNjQ5MTI5MTY0LC05OTE2MzM4NCwtNzUwNzE1OTIyXX0=
 -->
