@@ -21,22 +21,22 @@ Es ist wichtig zu verstehen, dass innerhalb eines einzigen Konfigurationsabschni
   beispieltext
   #
 `config.vm.provider "virtualbox" do |vb|
-  vb.memory = "512"  
+  vb.memory = "512"`
 end
 Text
 #
-`config.vm.provision "shell", inline: <<-SHELL
+`config.vm.provision "shell", inline: <<-SHELL`
   Packages vom lokalen Server holen
-   sudo sed -i -e"1i deb {{config.server}}/apt-mirror/mirror/archive.ubuntu.com/ubuntu xenial main restricted" /etc/apt/sources.list 
+  `sudo sed -i -e"1i deb {{config.server}}/apt-mirror/mirror/archive.ubuntu.com/ubuntu xenial main restricted" /etc/apt/sources.list 
   sudo apt-get update
   sudo apt-get -y install apache2 
 SHELL
-end
+end`
 
 #
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3MTUxMTEzNCwtMTA4Mjc0NjYwLDQ1OT
+eyJoaXN0b3J5IjpbLTY0MDM2MTE4NiwtMTA4Mjc0NjYwLDQ1OT
 U2NDk4NiwxNzc1NTA2MjIwLDEyNTA0MzYyOTIsNjg4NjQ5OTQy
 LDE0MDQyNzUzOTYsLTE2NDkxMjkxNjQsLTk5MTYzMzg0LC03NT
 A3MTU5MjJdfQ==
