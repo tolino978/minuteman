@@ -10,6 +10,8 @@ Es ist wichtig zu verstehen, dass innerhalb eines einzigen Konfigurationsabschni
 #
   config.vm.box = "ubuntu/xenial64"
   
+  Hier wird 
+  
   config.vm.network "forwarded_port", guest:80, host:8080, auto_correct: true
   config.vm.synced_folder ".", "/var/www/html"  
 config.vm.provider "virtualbox" do |vb|
@@ -23,6 +25,7 @@ config.vm.provision "shell", inline: <<-SHELL
 SHELL
 end
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjg4NjQ5OTQyLDE0MDQyNzUzOTYsLTE2ND
-kxMjkxNjQsLTk5MTYzMzg0LC03NTA3MTU5MjJdfQ==
+eyJoaXN0b3J5IjpbMTI1MDQzNjI5Miw2ODg2NDk5NDIsMTQwND
+I3NTM5NiwtMTY0OTEyOTE2NCwtOTkxNjMzODQsLTc1MDcxNTky
+Ml19
 -->
