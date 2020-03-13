@@ -14,7 +14,8 @@ Es ist wichtig zu verstehen, dass innerhalb eines einzigen Konfigurationsabschni
 #
   config.vm.network "forwarded_port", guest:80, host:8080, auto_correct: true
  Hier wird der Port festgelegt über der die Virtuelle Maschine erreichbar ist. In diesem Fall hier wäre das der Port 8080.
- Auto Correct  Wenn dies zutrifft, wird der Host-Port automatisch geändert, falls er mit einem bereits verwendeten Port kollidiert. Standardmäßig ist dies falsch.
+ Die Option Auto Correct überprüft ob der gesetzte Port mit einem bereits verwendeten Port kollidiert. Wenn ja, wird der Host-Port automatisch geändert. Standardmässig ist diese Option auf "false" gesetzt.
+ #
   config.vm.synced_folder ".", "/var/www/html"  
 config.vm.provider "virtualbox" do |vb|
   vb.memory = "512"  
@@ -27,7 +28,7 @@ config.vm.provision "shell", inline: <<-SHELL
 SHELL
 end
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzc3NTIxNDY1LDEyNTA0MzYyOTIsNjg4Nj
+eyJoaXN0b3J5IjpbMTY1MzI4OTc0LDEyNTA0MzYyOTIsNjg4Nj
 Q5OTQyLDE0MDQyNzUzOTYsLTE2NDkxMjkxNjQsLTk5MTYzMzg0
 LC03NTA3MTU5MjJdfQ==
 -->
