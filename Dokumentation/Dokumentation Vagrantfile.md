@@ -9,6 +9,7 @@ Derzeit gibt es nur zwei unterstützte Versionen: "1" und "2". Version 1 repräs
 Es ist wichtig zu verstehen, dass innerhalb eines einzigen Konfigurationsabschnitts nur eine einzige Version von Vagrant verwendet werden kann.
 #
   config.vm.box = "ubuntu/xenial64"
+  
   config.vm.network "forwarded_port", guest:80, host:8080, auto_correct: true
   config.vm.synced_folder ".", "/var/www/html"  
 config.vm.provider "virtualbox" do |vb|
@@ -22,6 +23,6 @@ config.vm.provision "shell", inline: <<-SHELL
 SHELL
 end
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwNDI3NTM5NiwtMTY0OTEyOTE2NCwtOT
-kxNjMzODQsLTc1MDcxNTkyMl19
+eyJoaXN0b3J5IjpbNjg4NjQ5OTQyLDE0MDQyNzUzOTYsLTE2ND
+kxMjkxNjQsLTk5MTYzMzg0LC03NTA3MTU5MjJdfQ==
 -->
