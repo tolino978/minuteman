@@ -11,8 +11,9 @@ Es ist wichtig zu verstehen, dass innerhalb eines einzigen Konfigurationsabschni
   config.vm.box = "ubuntu/xenial64"
   
   Hier wird spezifiziert welche VM Box verwendet werden.
-  #
+#
   config.vm.network "forwarded_port", guest:80, host:8080, auto_correct: true
+ Hier wird der Port festgelegt über der die Virtuelle Maschine erreichbar ist. In diesem Fall hier wäre das der Port 
   config.vm.synced_folder ".", "/var/www/html"  
 config.vm.provider "virtualbox" do |vb|
   vb.memory = "512"  
@@ -25,7 +26,7 @@ config.vm.provision "shell", inline: <<-SHELL
 SHELL
 end
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2NDg3NDEyOCwxMjUwNDM2MjkyLDY4OD
+eyJoaXN0b3J5IjpbMTQ2MDUyMjA4NiwxMjUwNDM2MjkyLDY4OD
 Y0OTk0MiwxNDA0Mjc1Mzk2LC0xNjQ5MTI5MTY0LC05OTE2MzM4
 NCwtNzUwNzE1OTIyXX0=
 -->
