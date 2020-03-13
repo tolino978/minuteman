@@ -1,5 +1,6 @@
-Vagrant File Dokumentation
+Vagrantfile Dokumentation
 -----------------------------
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzE4MjM4NzhdfQ==
+eyJoaXN0b3J5IjpbLTc1MDcxNTkyMl19
 -->
