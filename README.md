@@ -13,7 +13,7 @@ vagrant up
 ```
 Der Webserver ist unter http://localhost:8080 erreichbar
 ## Konfiguration
-Wenn ein eigenes HTML File verwendet werden soll, kann einfach das index.html im Verzeichniss des Projekts ersetzt werden.
+Standardmässig wird die Systemdokumentation als Webseite angezeigt. Wenn ein eigenes HTML File verwendet werden soll, kann einfach das index.html im Projektverzeichniss ersetzt werden.
 
 Falls der Port 8080 auf dem Hostgerät bereits besetzt wird, wird automatisch ein anderer gewählt.
 
