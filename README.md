@@ -12,4 +12,7 @@
 <p>Folgenden Befehl ausführen:</p>
 <pre><code>vagrant up
 </code></pre>
-
+ 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTEyODQ1MDc1MV19
+-->
