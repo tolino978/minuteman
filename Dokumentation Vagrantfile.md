@@ -97,6 +97,10 @@ Dieser Befehl installiert den Webserver Apache.
 #
 ```
 Titel: Vagrantfile Dokumentation
-Autor: Nando Rigonalli
+Autor: Nando Rigonalli eines Vagrantfiles
+Autor: Marc De Pra
 Datum: 15.03.2020
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTg3ODE3NzQxMF19
+-->
