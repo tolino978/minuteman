@@ -13,9 +13,11 @@ vagrant up
 ```
 Der Webserver ist unter http://llocalhost:8080 erreichbar
 ## Konfiguration
-Wenn ein eigenes HTML File 
+Wenn ein eigenes HTML File verwendet werden soll, kann einfach das index.html im Verzeichniss des Projekts ersetzt werden.
+
+Falls der Port 8080 auf dem Hostgerät bereits besetzt wird, wird automatisch ein anderer gewählt.
 
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjU1MTAwMzVdfQ==
+eyJoaXN0b3J5IjpbLTU4MTIzMTIzM119
 -->
