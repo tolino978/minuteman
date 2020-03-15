@@ -11,7 +11,11 @@ Folgenden Befehl ausführen:
 ```sh
 vagrant up
 ```
+Der Webserver ist unter http://llocalhost:8080 erreichbar
+## Konfiguration
+Wenn ein eigenes HTML File 
+
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3MTg3OTQwXX0=
+eyJoaXN0b3J5IjpbLTEzMjU1MTAwMzVdfQ==
 -->
