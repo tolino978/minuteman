@@ -11,7 +11,7 @@ Folgenden Befehl ausführen:
 ```sh
 vagrant up
 ```
-Der Webserver ist unter http://llocalhost:8080 erreichbar
+Der Webserver ist unter http://localhost:8080 erreichbar
 ## Konfiguration
 Wenn ein eigenes HTML File verwendet werden soll, kann einfach das index.html im Verzeichniss des Projekts ersetzt werden.
 
