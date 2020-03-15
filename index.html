@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumentation Vagrantfile.md</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="vagrantfile-dokumentation">Vagrantfile Dokumentation</h1>
+<h2 id="vm-konfiguration">VM Konfiguration</h2>
+<pre><code>Vagrant.configure(2) do |config|
+</code></pre>
+<p>Die <code>2</code> bestimmt, welche Version des <code>config</code> Objekts verwendet wird. Dieses Objekt ist von Version zu Version sehr verschieden.</p>
+<p>Zurzeit gibt es nur zwei unterstützte Versionen des <code>config</code> Objekts. Die Version 1, welche die Konfiguration von Vagrant 1.0.x wiederspiegelt und die Version 2, welche die Konfiguration von Vagrant 1.1+ bis 2.0.x wiederspiegelt.</p>
+<p>Generell ist es wichtig zu wissen, dass in einem Vagrantfile nur eine Version des <code>config</code> Objekts verwendet werden kann.</p>
+<h1 id="section"></h1>
+<pre><code>config.vm.box = "ubuntu/xenial64"
+</code></pre>
+<p>In dieser Zeile wird festgelegt, welche Box gebraucht wird um die zu erstellen.  Der Wert sollte hier der Name einer heruntergeladenen Box oder der Kurzname einer Box von der Vagrant Cloud sein</p>
+<h1 id="section-1"></h1>
+<pre><code>config.vm.network "forwarded_port", guest:80, host:8080, auto_correct: true
+</code></pre>
+<p>Hier wird festgelegt, welcher Hostport für den Webserver verwendet wird. Auf Basis dieser Definition wird dann ein Portforwarding eingerrichtet.</p>
+<p>Die Option <code>auto_correct: true</code> überprüft ob der gesetzte Port bereits für etwas anderes verwendet wird. Falls dies der Fall wäre, würde der Port automatisch geändert werden.<br>
+Die Option ist standardmässig deaktiviert.</p>
+<h1 id="section-2"></h1>
+<pre><code>config.vm.synced_folder ".", "/var/www/html"
+</code></pre>
+<p>Mit dieser Zeile wird ein Ordner, welcher zwischen dem Host System und der VM synchronisiert wird, definiert.<br>
+Die erste Option definiert den Pfad auf dem Host System und die zweite den Ort auf der VM. In diesem Fall definiert <code>"."</code> also, dass der Pfad auf dem Host System im selben Ordner ist wie das Vagrantfile und <code>"/var/www/html"</code> definiert den Webordner auf der VM.</p>
+<p>Zusätzlich zu diesen Optionen kann der spezifische synchronisierte Ordnertyp weitere Optionen zulassen:</p>
+<p><em>- <code>create</code> Wenn true, wird der Host-Pfad erstellt, wenn er nicht existiert. Standardeinstellung: falsch.</em></p>
+<p><em>- <code>disabled</code> Wenn true, wird dieser synchronisierte Ordner deaktiviert und nicht eingerichtet.<br>
+Dies kann verwendet werden, um einen zuvor definierten synchronisierten Ordner zu deaktivieren oder um eine Definition auf der Grundlage eines externen Faktors bedingt zu deaktivieren.</em></p>
+<p><em>- <code>group</code>  Die Gruppe, der der synchronisierte Ordner gehören wird. Standardmäßig wird dies der SSH-Benutzer sein. Einige synchronisierte Ordnertypen unterstützen die Änderung der Gruppe nicht.</em></p>
+<p><em>- <code>mount_options</code>  Eine Liste zusätzlicher Einhängeoptionen, die an den Einhängebefehl übergeben werden.</em></p>
+<p><em>- <code>owner</code> Der Benutzer, der der Eigentümer dieses synchronisierten Ordners sein sollte. Standardmäßig wird dies der SSH-Benutzer sein. Einige synchronisierte Ordnertypen unterstützen die Änderung des Eigentümers nicht.</em></p>
+<p><em>- <code>type</code>  Der Typ des synchronisierten Ordners. Wenn dies nicht angegeben wird, wählt Vagrant automatisch die beste synchronisierte Ordneroption für Ihre Umgebung. Andernfalls können Sie einen bestimmten Typ wie “nfs” angeben.</em></p>
+<p><em>- <code>id</code> Der Name für den Mount-Point dieses synchronisierten Ordners auf dem Gastcomputer. Dieser wird angezeigt, wenn man den Mount auf dem Gastsystem ausführt.</em></p>
+<h1 id="section-3"></h1>
+<pre><code>config.vm.provider "virtualbox" do |vb|
+</code></pre>
+<p>In dieser Zeile wird der Provider oder auch VM Engine definiert. In diesem Fall ist das VirtualBox. Zusätlich können je noch Provider noch mehr Konfigurationen angegeben werde.</p>
+<p>Diese Konfigurationen unterscheidet sich von Provider zu Provider.<br>
+Einige Anbieter wie zum Beispiel VirtualBox brauchen keine anbieterspezifische Konfiguration sonder funktionieren “out of the box”.<br>
+Laut dem offiziellem Wiki Artikel von Vagrant, ist die anbieterspezifische Konfiguration als eine Möglichkeit gedacht, mehr Optionen bereitzustellen, um den Provider optimal zu nutzen. Sie ist nicht als Hindernis gedacht, gegen einen bestimmten Anbieter anzutreten.</p>
+<p>Vorrangige Konfiguration<br>
+Man kann auch nicht-anbieter-spezifische Konfigurationen wie config.vm.box und jede andere Vagrant-Konfiguration außer Kraft setzen. Dies geschieht durch die Angabe eines zweiten Arguments an config.vm.provider.<br>
+In unserem Fall ist der festgelegte Anbieter Virtualbox. Mit den Paramterangaben “do |vb|” wird alles überschrieben und Virtualbox für dieses Vagrantfile als Anbieter gesetzt.</p>
+<h1 id="section-4"></h1>
+<pre><code>  vb.memory = "512"
+</code></pre>
+<p>Diese Zeile bestimmt wie viel Arbeitsspeicher die VM haben wird. Mit dieser Angabe wird der Arbeitsspeicher für die Maschine festgelegt. Die CPU Anzahl könnte auch festgelegt werden. Dies würde man mit folgender Zeile erledigen:</p>
+<pre><code>v.cpus = 2
+</code></pre>
+<h2 id="betriebssystemkonfiguration">Betriebssystemkonfiguration</h2>
+<pre><code>config.vm.provision "shell", inline: &lt;&lt;-SHELL
+</code></pre>
+<p>Diese Zeile definiert Befehle, welche auf dem Betriebssystem ausgeführt werden sollen.</p>
+<pre><code>sudo sed -i -e"1i deb {{config.server}}/apt-mirror/mirror/archive.ubuntu.com/ubuntu xenial main 
+</code></pre>
+<p>Dieser Befehl holt das Ubuntu Image von einem Debian Mirror.</p>
+<pre><code>sudo apt-get update
+</code></pre>
+<p>Dieser Befehl aktualisiert alle Pakete auf dem Betriebssystem</p>
+<pre><code>sudo apt-get -y install apache2 
+</code></pre>
+<p>Dieser Befehl installiert den Webserver Apache.</p>
+<h1 id="section-5"></h1>
+<pre><code>Titel: Vagrantfile Dokumentation
+Autor: Nando Rigonalli
+Datum: 15.03.2020
+</code></pre>
+</div>
+</body>
+
+</html>
