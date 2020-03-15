@@ -96,7 +96,7 @@ sudo apt-get -y install apache2
 Dieser Befehl installiert den Webserver Apache.
 #
 ```
-Titel: Dokumentation eines Vagrantfiles
-Autor: Marc De Pra
+Titel: Vagrantfile Dokumentation
+Autor: Nando Rigonalli
 Datum: 15.03.2020
 ```
